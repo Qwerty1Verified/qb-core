@@ -435,7 +435,7 @@ end
 ---@param cb function
 ---@param ... any
 function QBCore.Functions.TriggerClientCallback(name, source, cb, ...)
-    QBCore.ClientCallbacks[name] = cb
+    QBCore.ClientCallbacks[name..source] = cb
     TriggerClientEvent('QBCore:Client:TriggerClientCallback', source, name, ...)
 end
 

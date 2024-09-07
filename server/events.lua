@@ -116,9 +116,9 @@ end)
 
 -- Client Callback
 RegisterNetEvent('QBCore:Server:TriggerClientCallback', function(name, ...)
-    if QBCore.ClientCallbacks[name] then
-        QBCore.ClientCallbacks[name](...)
-        QBCore.ClientCallbacks[name] = nil
+    if QBCore.ClientCallbacks[name..source] then
+        QBCore.ClientCallbacks[name..source](...)
+        QBCore.ClientCallbacks[name..source] = nil
     end
 end)
 
